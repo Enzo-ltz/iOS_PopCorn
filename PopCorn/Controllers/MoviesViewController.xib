@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesViewController" customModule="PopCorn" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="x20-jM-mkt" id="GOs-J8-31b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,14 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x20-jM-mkt">
-                    <rect key="frame" x="87" y="143" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x20-jM-mkt">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x20-jM-mkt" secondAttribute="bottom" id="Asq-hw-PNQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x20-jM-mkt" secondAttribute="trailing" id="FW6-Pq-5YB"/>
+                <constraint firstItem="x20-jM-mkt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TgK-7k-4oz"/>
+                <constraint firstItem="x20-jM-mkt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TsZ-7b-hCG"/>
+            </constraints>
             <point key="canvasLocation" x="142" y="149"/>
         </view>
     </objects>

@@ -11,7 +11,7 @@
         <!--Movie Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MovieDetailViewController" customModule="PopCorn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieDetailStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MovieDetailViewController" customModule="PopCorn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,6 +186,13 @@
                             <constraint firstItem="LzL-59-BQD" firstAttribute="top" secondItem="tf9-Wl-J8g" secondAttribute="bottom" constant="10" id="prj-qA-sv0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="EUk-N7-gMU" id="IZJ-gj-wPm"/>
+                        <outlet property="durationLabel" destination="VWb-8I-ojh" id="s4b-dd-UbI"/>
+                        <outlet property="subtitleLabel" destination="912-qL-gnT" id="mV6-po-fHG"/>
+                        <outlet property="synopsisLabel" destination="U3y-L6-Crf" id="wI1-I4-lIr"/>
+                        <outlet property="titleLabel" destination="kjy-7g-yHI" id="fVC-CS-LsK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
