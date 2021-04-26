@@ -9,9 +9,10 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var synopsysLabel: UILabel!
     
     static let reuseID: String="MovieTableViewCellReuseID"
     
@@ -19,7 +20,8 @@ class MovieTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         titleLabel.text = nil
-        subtitleLabel.text = nil
+        dateLabel.text = nil
+        synopsysLabel.text = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,4 +30,9 @@ class MovieTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func fill(movie: Test){
+        titleLabel.text = movie.title
+        dateLabel.text = movie.date
+        synopsysLabel.text = movie.synopsys
+    }
 }

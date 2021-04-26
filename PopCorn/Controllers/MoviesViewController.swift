@@ -9,7 +9,8 @@ import UIKit
 
 struct Test {
     let title: String
-    let subtitle: String
+    let date: String
+    let synopsys: String
 }
 
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -18,9 +19,9 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     let movies: [Test] = [
-        Test(title:"Movie 1", subtitle: "Subtitle 1"),
-        Test(title:"Movie 2", subtitle: "Subtitle 2"),
-        Test(title:"Movie 3", subtitle: "Subtitle 3")
+        Test(title:"Movie 1", date: "Subtitle 1", synopsys: "Blabla"),
+        Test(title:"Movie 2", date: "Subtitle 2", synopsys: "Vkavka"),
+        Test(title:"Movie 3", date: "Subtitle 3", synopsys:"JIOAZijaoz")
     ]
     
     override func viewDidLoad() {
@@ -44,8 +45,9 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func setupViews(){
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 80
+        //tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 120
+        tableView.estimatedRowHeight = 150
         
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: MovieTableViewCell.reuseID)
     }
@@ -62,9 +64,8 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.reuseID, for: indexPath) as! MovieTableViewCell
         
         let movie = movies[indexPath.row]
-        cell.titleLabel.text = movie.title
-        cell.subtitleLabel.text = movie.subtitle
-        
+       
+        cell.fill(movie: movie)
         print("index path :")
         print(indexPath)
         
