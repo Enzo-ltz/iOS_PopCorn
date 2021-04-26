@@ -9,7 +9,7 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
     
-    let movie = Movie(title: "Kaamelott", subtitle: "Kaamelott Premier Volet", date: "23-12-2000", duration: 120, synopsis:"LOREM UPIAZUHUI", categories: [Genre(id: 12, name: "Humour")])
+    let movie = Movie(title: "Kaamelott", subtitle: "Kaamelott Premier Volet", date: "23-12-2000", duration: 120, synopsis:"LOREM UPIAZUHUI", categories: [Genre(id: 12, name: "Humour")], affiche: "", poster: "")
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

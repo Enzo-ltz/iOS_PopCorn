@@ -18,10 +18,9 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var tableView: UITableView!
     
-    let movies: [Test] = [
-        Test(title:"Movie 1", date: "Subtitle 1", synopsys: "Blabla"),
-        Test(title:"Movie 2", date: "Subtitle 2", synopsys: "Vkavka"),
-        Test(title:"Movie 3", date: "Subtitle 3", synopsys:"JIOAZijaoz")
+    let movies: [Movie] = [
+        Movie(title:"Kaamelott", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], affiche:"", poster:"/3bD1YWyH7cY0al6DXvCIrbDY6t2.jpg"),
+        Movie(title:"Les Gardiens de la Galaxie", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], affiche:"", poster:"/8bT1wgggO5xMamYu4kDiVloWXJQ.jpg")
     ]
     
     override func viewDidLoad() {
@@ -64,6 +63,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.reuseID, for: indexPath) as! MovieTableViewCell
         
         let movie = movies[indexPath.row]
+        
        
         cell.fill(movie: movie)
         print("index path :")
@@ -71,6 +71,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

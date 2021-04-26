@@ -14,6 +14,7 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsysLabel: UILabel!
     
+    @IBOutlet weak var posterImageView: UIImageView!
     static let reuseID: String="MovieTableViewCellReuseID"
     
     override func awakeFromNib() {
@@ -30,9 +31,23 @@ class MovieTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fill(movie: Test){
+    
+    
+    func fill(movie: Movie){
+        let posterUrlStr = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/\(movie.poster)"
+        
+        guard let imageUrl:URL = URL(string: posterUrlStr) else {
+            return
+        }
+        
+        guard let posterImageData = try? Data(contentsOf: imageUrl) else {
+            return
+        }
+        
         titleLabel.text = movie.title
         dateLabel.text = movie.date
-        synopsysLabel.text = movie.synopsys
+        synopsysLabel.text = movie.synopsis
+        posterImageView.image = movie.getPoster()
+        
     }
 }

@@ -19,7 +19,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-GB-Occ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="affiche" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-uj-dBo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-uj-dBo">
                                 <rect key="frame" x="0.0" y="0.0" width="114" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LwZ-uj-dBo" secondAttribute="height" multiplier="1:1" id="DJT-Ww-4sA"/>
@@ -61,13 +61,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="HvJ-3e-S9I" id="tth-bo-3FJ"/>
+                <outlet property="posterImageView" destination="LwZ-uj-dBo" id="6Y9-T0-Bsg"/>
                 <outlet property="synopsysLabel" destination="B6F-SE-Etr" id="Vje-dp-Jdo"/>
                 <outlet property="titleLabel" destination="uDt-bE-s7N" id="xrS-JC-G6g"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="120.53571428571428"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="affiche" width="1200" height="630"/>
-    </resources>
 </document>
