@@ -28,6 +28,9 @@
                                 <rect key="frame" x="171.33333333333334" y="98.333333333333314" width="85.333333333333343" height="81.999999999999986"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="PlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="090-cJ-c5D"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="tf9-Wl-J8g" userLabel="posterImage">
                                 <rect key="frame" x="30.000000000000007" y="222.33333333333337" width="85.666666666666686" height="111"/>
