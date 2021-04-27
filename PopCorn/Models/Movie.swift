@@ -15,8 +15,23 @@ struct Movie {
     let duration: Int
     let synopsis: String
     let categories : [Genre]
-    let affiche: String
+    let filmImage: String
     let poster: String
+    
+    func getFilmImage() -> UIImage?{
+        let posterUrlStr = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/\(self.filmImage)"
+        
+        guard let imageUrl:URL = URL(string: posterUrlStr) else {
+            return UIImage(named:"affiche")
+        }
+        
+        guard let posterImageData = try? Data(contentsOf: imageUrl) else {
+            return UIImage(named:"affiche")
+        }
+        let posterUIImage = UIImage(data: posterImageData)
+        
+        return posterUIImage
+    }
     
     func getPoster() -> UIImage?{
         let posterUrlStr = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/\(self.poster)"

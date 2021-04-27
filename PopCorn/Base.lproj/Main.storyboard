@@ -190,6 +190,8 @@
                         <outlet property="categorieLabel1" destination="K2J-u3-C9Z" id="F3P-s8-RPt"/>
                         <outlet property="dateLabel" destination="EUk-N7-gMU" id="IZJ-gj-wPm"/>
                         <outlet property="durationLabel" destination="VWb-8I-ojh" id="s4b-dd-UbI"/>
+                        <outlet property="filmImageView" destination="5Ao-nD-ZBC" id="VQA-xe-Ehd"/>
+                        <outlet property="posterImageView" destination="tf9-Wl-J8g" id="s1w-We-kuG"/>
                         <outlet property="subtitleLabel" destination="912-qL-gnT" id="mV6-po-fHG"/>
                         <outlet property="synopsisLabel" destination="U3y-L6-Crf" id="wI1-I4-lIr"/>
                         <outlet property="titleLabel" destination="kjy-7g-yHI" id="fVC-CS-LsK"/>

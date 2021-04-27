@@ -19,8 +19,8 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     let movies: [Movie] = [
-        Movie(title:"Kaamelott", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], affiche:"", poster:"/3bD1YWyH7cY0al6DXvCIrbDY6t2.jpg"),
-        Movie(title:"Les Gardiens de la Galaxie", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], affiche:"", poster:"/8bT1wgggO5xMamYu4kDiVloWXJQ.jpg")
+        Movie(title:"Kaamelott", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], filmImage:"/3bD1YWyH7cY0al6DXvCIrbDY6t2.jpg", poster:"/dWPyH67PdNcsP8yZ0R5w6CRlF4x.jpg"),
+        Movie(title:"Les Gardiens de la Galaxie", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], filmImage:"/8bT1wgggO5xMamYu4kDiVloWXJQ.jpg", poster:"/dWPyH67PdNcsP8yZ0R5w6CRlF4x.jpg")
     ]
     
     override func viewDidLoad() {
@@ -77,7 +77,8 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.deselectRow(at: indexPath, animated: true)
         let movie = movies[indexPath.row]
         let board = UIStoryboard(name: "Main", bundle: nil)
-        let detailVC = board.instantiateViewController(identifier: "MovieDetailStoryboardID")
+        let detailVC = board.instantiateViewController(identifier: "MovieDetailStoryboardID") as MovieDetailViewController
+        detailVC.movie = movie
         
         print(movie.title)
         

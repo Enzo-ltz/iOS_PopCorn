@@ -34,20 +34,11 @@ class MovieTableViewCell: UITableViewCell {
     
     
     func fill(movie: Movie){
-        let posterUrlStr = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/\(movie.poster)"
-        
-        guard let imageUrl:URL = URL(string: posterUrlStr) else {
-            return
-        }
-        
-        guard let posterImageData = try? Data(contentsOf: imageUrl) else {
-            return
-        }
-        
+                
         titleLabel.text = movie.title
         dateLabel.text = movie.date
         synopsysLabel.text = movie.synopsis
-        posterImageView.image = movie.getPoster()
+        posterImageView.image = movie.getFilmImage()
         
     }
 }
