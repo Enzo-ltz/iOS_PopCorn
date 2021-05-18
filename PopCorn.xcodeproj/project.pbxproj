@@ -24,6 +24,10 @@
 		8F6F8E6326380F3B00CCA1C6 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F6F8E6126380F3B00CCA1C6 /* CollectionViewController.xib */; };
 		8F6F8E78263813B000CCA1C6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F8E76263813B000CCA1C6 /* CategoryCollectionViewCell.swift */; };
 		8F6F8E79263813B000CCA1C6 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F6F8E77263813B000CCA1C6 /* CategoryCollectionViewCell.xib */; };
+		8F92DF272653ACB400C970E3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF262653ACB400C970E3 /* Category.swift */; };
+		8F92DF332653DA4F00C970E3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF322653DA4F00C970E3 /* ApiManager.swift */; };
+		8F92DF3B2653DE6300C970E3 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF3A2653DE6300C970E3 /* RequestManager.swift */; };
+		8F92DF432653E08C00C970E3 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F92DF422653E08C00C970E3 /* CategoryRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		8F6F8E6126380F3B00CCA1C6 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
 		8F6F8E76263813B000CCA1C6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F6F8E77263813B000CCA1C6 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		8F92DF262653ACB400C970E3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8F92DF322653DA4F00C970E3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		8F92DF3A2653DE6300C970E3 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		8F92DF422653E08C00C970E3 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				8F5FA3102636C04C00C404AC /* Movie.swift */,
+				8F92DF262653ACB400C970E3 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +161,7 @@
 		8F6229FB2625768900C5D869 /* PopCorn */ = {
 			isa = PBXGroup;
 			children = (
+				8F92DF312653D9A400C970E3 /* Repository */,
 				8F5FA31E2636E2CD00C404AC /* Views */,
 				8F5FA30F2636C01200C404AC /* Models */,
 				8F5FA2F126369B0D00C404AC /* Controllers */,
@@ -225,6 +235,16 @@
 				8F6F8E77263813B000CCA1C6 /* CategoryCollectionViewCell.xib */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		8F92DF312653D9A400C970E3 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8F92DF322653DA4F00C970E3 /* ApiManager.swift */,
+				8F92DF3A2653DE6300C970E3 /* RequestManager.swift */,
+				8F92DF422653E08C00C970E3 /* CategoryRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,11 +383,15 @@
 			files = (
 				8F6F8E78263813B000CCA1C6 /* CategoryCollectionViewCell.swift in Sources */,
 				8F5FA3112636C04C00C404AC /* Movie.swift in Sources */,
+				8F92DF332653DA4F00C970E3 /* ApiManager.swift in Sources */,
 				8F622A012625768900C5D869 /* MovieDetailViewController.swift in Sources */,
 				8F5FA3222636E38000C404AC /* MovieTableViewCell.swift in Sources */,
 				8F6229FD2625768900C5D869 /* AppDelegate.swift in Sources */,
+				8F92DF272653ACB400C970E3 /* Category.swift in Sources */,
 				8F6F8E6226380F3B00CCA1C6 /* CollectionViewController.swift in Sources */,
 				8F6229FF2625768900C5D869 /* SceneDelegate.swift in Sources */,
+				8F92DF432653E08C00C970E3 /* CategoryRepository.swift in Sources */,
+				8F92DF3B2653DE6300C970E3 /* RequestManager.swift in Sources */,
 				8F5FA2EC2636989700C404AC /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

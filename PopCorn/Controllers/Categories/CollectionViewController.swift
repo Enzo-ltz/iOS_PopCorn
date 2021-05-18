@@ -9,17 +9,29 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController{
+class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
-    
+    var myCategories: [Category] = []
+    let categoriesRepository = CategoryRepository()
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         title="Categories"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
+        categoriesRepository.getCategories() { response in
+                    if let categories = response {
+                        self.myCategories = categories.toCategory()
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
+                        print(self.myCategories)
+                    }
+                }
         // Register cell classes
         self.collectionView!.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,12 +51,25 @@ class CollectionViewController: UICollectionViewController{
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 2
+        return 10
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let  size = self.collectionView.frame.size.width / CGFloat(2) - 5
+        return CGSize(width: size, height: size)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
@@ -57,6 +82,29 @@ class CollectionViewController: UICollectionViewController{
         navigationController?.pushViewController(MoviesViewController(nibName: "MoviesViewController", bundle: nil), animated: true)
     }
 
+//    completionHandler: @escaping ([Category]) -> Void
+//    func fetchCategories(){
+//        let url = URL(string: "https://api.themoviedb.org/3/genre/movie/list?api_key=5a88f6a3a255d01d819301d8c98dc442&language=fr-FR")!
+//
+//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//          if let error = error {
+//            print("Error with fetching categories: \(error)")
+//            return
+//          }
+//
+//          guard let httpResponse = response as? HTTPURLResponse,
+//                (200...299).contains(httpResponse.statusCode) else {
+//            print("Error with the response, unexpected status code: \(String(describing: response))")
+//            return
+//          }
+//
+//            if let data = data {
+//                let categories = try? JSONDecoder().decode(CategoriesList.self, from: data)
+//                print(categories!.genres[0].id)
+//            }
+//        }
+//        task.resume()
+//    }
     // MARK: UICollectionViewDelegate
 
     /*

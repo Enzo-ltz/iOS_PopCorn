@@ -4,36 +4,32 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="PopCorn" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGz-E9-B5B">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duJ-wD-xfv">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <rect key="frame" x="19" y="29.5" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.49699693337229106" green="0.76511629830598205" blue="0.49163823583818766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="duJ-wD-xfv" firstAttribute="leading" secondItem="kGz-E9-B5B" secondAttribute="leading" id="C2d-RT-bKo"/>
-                            <constraint firstItem="duJ-wD-xfv" firstAttribute="top" secondItem="kGz-E9-B5B" secondAttribute="top" id="YUy-Rj-sgg"/>
-                            <constraint firstAttribute="trailing" secondItem="duJ-wD-xfv" secondAttribute="trailing" id="jcA-DR-vq7"/>
-                            <constraint firstAttribute="bottom" secondItem="duJ-wD-xfv" secondAttribute="bottom" id="mFK-qA-1eR"/>
+                            <constraint firstItem="duJ-wD-xfv" firstAttribute="centerY" secondItem="kGz-E9-B5B" secondAttribute="centerY" id="NXs-L1-Atg"/>
+                            <constraint firstItem="duJ-wD-xfv" firstAttribute="centerX" secondItem="kGz-E9-B5B" secondAttribute="centerX" id="e0k-vK-htz"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -45,15 +41,8 @@
                 <constraint firstItem="kGz-E9-B5B" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YcW-SE-fio"/>
                 <constraint firstAttribute="trailing" secondItem="kGz-E9-B5B" secondAttribute="trailing" id="xso-bZ-Lpc"/>
             </constraints>
-            <point key="canvasLocation" x="-94" y="117"/>
+            <size key="customSize" width="79" height="79"/>
+            <point key="canvasLocation" x="-73.188405797101453" y="126.22767857142857"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

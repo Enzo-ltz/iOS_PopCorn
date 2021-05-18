@@ -13,5 +13,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
 
 }
