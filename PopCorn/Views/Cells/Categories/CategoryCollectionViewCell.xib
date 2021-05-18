@@ -42,6 +42,9 @@
                 <constraint firstAttribute="trailing" secondItem="kGz-E9-B5B" secondAttribute="trailing" id="xso-bZ-Lpc"/>
             </constraints>
             <size key="customSize" width="79" height="79"/>
+            <connections>
+                <outlet property="categoryLabel" destination="duJ-wD-xfv" id="fsf-6b-Doa"/>
+            </connections>
             <point key="canvasLocation" x="-73.188405797101453" y="126.22767857142857"/>
         </collectionViewCell>
     </objects>

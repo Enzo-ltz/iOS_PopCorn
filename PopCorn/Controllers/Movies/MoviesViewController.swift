@@ -15,8 +15,18 @@ struct Test {
 
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
+    let category: Category
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    init(category: Category){
+        self.category = category
+        super.init(nibName: "MoviesViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     let movies: [Movie] = [
         Movie(title:"Kaamelott", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], filmImage:"/3bD1YWyH7cY0al6DXvCIrbDY6t2.jpg", poster:"/dWPyH67PdNcsP8yZ0R5w6CRlF4x.jpg"),
@@ -25,7 +35,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(category)
         // Do any additional setup after loading the view.
         setupViews()
     }
