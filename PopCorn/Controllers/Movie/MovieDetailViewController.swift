@@ -9,7 +9,7 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
     
-    var movie: Movie?
+    var movieId: Int = 0
     
     //let movie = Movie(title: "Kaamelott", subtitle: "Kaamelott Premier Volet", date: "23-12-2000", duration: 120, synopsis:"LOREM UPIAZUHUI", categories: [Genre(id: 12, name: "Humour")], affiche: "", poster: "")
     @IBOutlet weak var titleLabel: UILabel!
@@ -28,15 +28,17 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func setupViews() {
-        let durationString :String = "\(movie!.duration) min"
-        titleLabel.text = movie!.title
-        subtitleLabel.text = movie!.subtitle
-        dateLabel.text = movie!.date
-        durationLabel.text = durationString
-        synopsisLabel.text = movie!.synopsis
-        categorieLabel1.text = movie!.categories[0].name
-        filmImageView.image = movie!.getFilmImage()
-        posterImageView.image = movie!.getPoster()
+        print(movieId)
+//        let durationString :String = "\(movie!.duration) min"
+//        titleLabel.text = movie!.title
+//        subtitleLabel.text = movie!.subtitle
+//        dateLabel.text = movie!.date
+//        durationLabel.text = durationString
+//        synopsisLabel.text = movie!.synopsis
+//        categorieLabel1.text = movie!.categories[0].name
+//        filmImageView.image = movie!.getFilmImage()
+//        posterImageView.image = movie!.getPoster()
+        
         
     }
 

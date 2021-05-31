@@ -8,9 +8,7 @@
 import UIKit
 
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var spinner = UIActivityIndicatorView()
-    
+        
     let category: Category
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,6 +24,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var myMovies: [MovieList] = []
     let moviesRepository = MovieRepository()
+    var spinner = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,15 +81,15 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let movie = myMovies[indexPath.row]
-//        let board = UIStoryboard(name: "Main", bundle: nil)
-//        let detailVC = board.instantiateViewController(identifier: "MovieDetailStoryboardID") as MovieDetailViewController
-//        detailVC.movie = movie.id
-//
-//        print(movie.title)
-//
-//        present(detailVC,animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let movie = myMovies[indexPath.row]
+        let board = UIStoryboard(name: "Main", bundle: nil)
+        let detailVC = board.instantiateViewController(identifier: "MovieDetailStoryboardID") as MovieDetailViewController
+        detailVC.movieId = movie.id
+
+        print(movie.title)
+
+        present(detailVC,animated: true)
+    }
 }
