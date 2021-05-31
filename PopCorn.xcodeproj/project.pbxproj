@@ -20,6 +20,8 @@
 		8F622A092625768A00C5D869 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F622A072625768A00C5D869 /* LaunchScreen.storyboard */; };
 		8F622A142625768A00C5D869 /* PopCornTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F622A132625768A00C5D869 /* PopCornTests.swift */; };
 		8F622A1F2625768A00C5D869 /* PopCornUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F622A1E2625768A00C5D869 /* PopCornUITests.swift */; };
+		8F6F62082664CBD70044B831 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F62072664CBD70044B831 /* MovieRepository.swift */; };
+		8F6F620D2664D0DC0044B831 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F620C2664D0DC0044B831 /* MovieList.swift */; };
 		8F6F8E6226380F3B00CCA1C6 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F8E6026380F3B00CCA1C6 /* CollectionViewController.swift */; };
 		8F6F8E6326380F3B00CCA1C6 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F6F8E6126380F3B00CCA1C6 /* CollectionViewController.xib */; };
 		8F6F8E78263813B000CCA1C6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F8E76263813B000CCA1C6 /* CategoryCollectionViewCell.swift */; };
@@ -67,6 +69,8 @@
 		8F622A1A2625768A00C5D869 /* PopCornUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopCornUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F622A1E2625768A00C5D869 /* PopCornUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCornUITests.swift; sourceTree = "<group>"; };
 		8F622A202625768A00C5D869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F6F62072664CBD70044B831 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		8F6F620C2664D0DC0044B831 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		8F6F8E6026380F3B00CCA1C6 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		8F6F8E6126380F3B00CCA1C6 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
 		8F6F8E76263813B000CCA1C6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				8F5FA3102636C04C00C404AC /* Movie.swift */,
+				8F6F620C2664D0DC0044B831 /* MovieList.swift */,
 				8F92DF262653ACB400C970E3 /* Category.swift */,
 			);
 			path = Models;
@@ -243,6 +248,7 @@
 				8F92DF322653DA4F00C970E3 /* ApiManager.swift */,
 				8F92DF3A2653DE6300C970E3 /* RequestManager.swift */,
 				8F92DF422653E08C00C970E3 /* CategoryRepository.swift */,
+				8F6F62072664CBD70044B831 /* MovieRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -387,11 +393,13 @@
 				8F622A012625768900C5D869 /* MovieDetailViewController.swift in Sources */,
 				8F5FA3222636E38000C404AC /* MovieTableViewCell.swift in Sources */,
 				8F6229FD2625768900C5D869 /* AppDelegate.swift in Sources */,
+				8F6F620D2664D0DC0044B831 /* MovieList.swift in Sources */,
 				8F92DF272653ACB400C970E3 /* Category.swift in Sources */,
 				8F6F8E6226380F3B00CCA1C6 /* CollectionViewController.swift in Sources */,
 				8F6229FF2625768900C5D869 /* SceneDelegate.swift in Sources */,
 				8F92DF432653E08C00C970E3 /* CategoryRepository.swift in Sources */,
 				8F92DF3B2653DE6300C970E3 /* RequestManager.swift in Sources */,
+				8F6F62082664CBD70044B831 /* MovieRepository.swift in Sources */,
 				8F5FA2EC2636989700C404AC /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

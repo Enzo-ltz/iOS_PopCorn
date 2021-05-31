@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Movie {
+struct Movie: Decodable {
     let title: String
     let subtitle: String
     let date: String
@@ -57,7 +57,9 @@ struct Movie {
     }*/
 }
 
-struct Genre {
+struct Genre: Decodable {
     let id: Int
     let name: String
 }
+
+

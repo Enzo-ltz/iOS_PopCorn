@@ -29,7 +29,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
                         DispatchQueue.main.async {
                             self.collectionView.reloadData()
                         }
-                        print(self.myCategories)
                     }
                 }
                 
