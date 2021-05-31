@@ -15,11 +15,9 @@ struct RequestManager {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
-                print("Erreur dans requestData : \(error)")
                 return
             }
             if let data = data {
-                print("Dans data requestData : \(data)")
                 completion(data)
             }
         }.resume()

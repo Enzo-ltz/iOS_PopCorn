@@ -14,12 +14,14 @@ struct MovieList: Decodable {
     let date: String
     let overview: String
     let poster: String
+    let id: Int
     
     enum CodingKeys: String, CodingKey {
         case title
         case date = "release_date"
         case overview
         case poster = "poster_path"
+        case id
     }
     
     func getPoster() -> UIImage?{
@@ -43,9 +45,8 @@ struct MoviesList: Decodable{
     let results: [MovieList]
 
     func toMovie() -> [MovieList] {
-            print("Résultats : \(results)")
             return results.compactMap { movie -> MovieList? in
-                MovieList(title: movie.title, date: movie.date, overview: movie.overview, poster: movie.poster)
+                MovieList(title: movie.title, date: movie.date, overview: movie.overview, poster: movie.poster, id: movie.id)
             }
         }
 }

@@ -21,11 +21,6 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-//
-//    let movies: [Movie] = [
-//        Movie(title:"Kaamelott", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], filmImage:"/3bD1YWyH7cY0al6DXvCIrbDY6t2.jpg", poster:"/dWPyH67PdNcsP8yZ0R5w6CRlF4x.jpg"),
-//        Movie(title:"Les Gardiens de la Galaxie", subtitle: "Subtitle 1", date: "02-02-2021", duration: 100, synopsis: "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA", categories: [Genre(id: 1, name: "Humour")], filmImage:"/8bT1wgggO5xMamYu4kDiVloWXJQ.jpg", poster:"/dWPyH67PdNcsP8yZ0R5w6CRlF4x.jpg")
-//    ]
     
     var myMovies: [MovieList] = []
     let moviesRepository = MovieRepository()
@@ -37,29 +32,17 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         moviesRepository.getMovies(categorieId: category.id) { response in
             if let movies = response {
-//                self.myMovies = movies.toMovie();                DispatchQueue.main.async {
-//                    self.collectionView.reloadData()
-//                }
-                print("Dans la récup")
+                self.myMovies = movies.toMovie();                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func setupViews(){
         tableView.delegate = self
         tableView.dataSource = self
-        //tableView.rowHeight = UITableView.automaticDimension
         tableView.rowHeight = 120
         tableView.estimatedRowHeight = 150
         
@@ -71,16 +54,16 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return myMovies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.reuseID, for: indexPath) as! MovieTableViewCell
         
-//        let movie = movies[indexPath.row]
-//
-//
-//        cell.fill(movie: movie)
+        let movie = myMovies[indexPath.row]
+
+
+        cell.fill(movie: movie)
         
         return cell
     }
@@ -88,10 +71,10 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        tableView.deselectRow(at: indexPath, animated: true)
-//        let movie = movies[indexPath.row]
+//        let movie = myMovies[indexPath.row]
 //        let board = UIStoryboard(name: "Main", bundle: nil)
 //        let detailVC = board.instantiateViewController(identifier: "MovieDetailStoryboardID") as MovieDetailViewController
-//        detailVC.movie = movie
+//        detailVC.movie = movie.id
 //
 //        print(movie.title)
 //

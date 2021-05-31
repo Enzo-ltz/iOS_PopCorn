@@ -33,12 +33,10 @@ class MovieTableViewCell: UITableViewCell {
     
     
     
-    func fill(movie: Movie){
-                
+    func fill(movie: MovieList){
         titleLabel.text = movie.title
         dateLabel.text = movie.date
-        synopsysLabel.text = movie.synopsis
-        posterImageView.image = movie.getFilmImage()
-        
+        synopsysLabel.text = movie.overview
+        posterImageView.image = movie.getPoster()        
     }
 }
