@@ -9,6 +9,8 @@ import UIKit
 
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var spinner = UIActivityIndicatorView()
+    
     let category: Category
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,11 +32,22 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         setupViews()
         
+        
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+
+        spinner.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
+           
+        
         moviesRepository.getMovies(categorieId: category.id) { response in
             if let movies = response {
                 self.myMovies = movies.toMovie();                DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.spinner.stopAnimating()
                 }
+                
             }
         }
     }
