@@ -12,6 +12,7 @@ class MovieDetailViewController: UIViewController {
     var movieId: Int = 0
     
     //let movie = Movie(title: "Kaamelott", subtitle: "Kaamelott Premier Volet", date: "23-12-2000", duration: 120, synopsis:"LOREM UPIAZUHUI", categories: [Genre(id: 12, name: "Humour")], affiche: "", poster: "")
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -21,29 +22,40 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var filmImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
     
+    var movie :Movie?
+    let movieRepository = MovieRepository()
+    var spinner = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupViews()
+        movieRepository.getMovieDetail(movieId: movieId) { response in
+            if let movie = response {
+                self.movie = movie
+                DispatchQueue.main.async {
+                    self.setupInformations()
+                    self.spinner.stopAnimating()
+                }
+            }
+        }
     }
     
-    private func setupViews() {
-        print(movieId)
-//        let durationString :String = "\(movie!.duration) min"
-//        titleLabel.text = movie!.title
-//        subtitleLabel.text = movie!.subtitle
-//        dateLabel.text = movie!.date
-//        durationLabel.text = durationString
-//        synopsisLabel.text = movie!.synopsis
-//        categorieLabel1.text = movie!.categories[0].name
-//        filmImageView.image = movie!.getFilmImage()
-//        posterImageView.image = movie!.getPoster()
+    func setupInformations() {
+        
+        let durationString :String = "\(movie!.duration) min"
+        titleLabel.text = movie!.title
+        subtitleLabel.text = movie!.subtitle
+        dateLabel.text = movie!.date
+        durationLabel.text = durationString
+        synopsisLabel.text = movie!.overview
+        categorieLabel1.text = movie!.categories[0].name
+        filmImageView.image = movie!.getFilmImage()
+        posterImageView.image = movie!.getPoster()
         
         
     }
 
     @IBAction func PlayButton(_ sender: UIButton) {
-        print("In Button")
         UIApplication.shared.open(URL(string: "https://www.youtube.com/watch?v=hCKPvMT1E1I")!)
     }
     

@@ -13,10 +13,21 @@ struct Movie: Decodable {
     let subtitle: String
     let date: String
     let duration: Int
-    let synopsis: String
+    let overview: String
     let categories : [Genre]
     let filmImage: String
     let poster: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case subtitle = "tagline"
+        case date = "release_date"
+        case duration = "runtime"
+        case overview
+        case categories = "genres"
+        case filmImage = "backdrop_path"
+        case poster = "poster_path"
+    }
     
     func getFilmImage() -> UIImage?{
         let posterUrlStr = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/\(self.filmImage)"
@@ -62,4 +73,12 @@ struct Genre: Decodable {
     let name: String
 }
 
+struct MovieDetail: Decodable {
+    let result: Movie
+    
+    func toMovie() -> Movie {
+        return result
+    }
+    
+}
 
